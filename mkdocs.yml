@@ -1,0 +1,157 @@
+site_name: EcoRide · Documentació
+site_url: https://asiercode-max.github.io/EcoRide_Aaron_Asier/
+
+theme:
+  name: material
+  language: ca
+  custom_dir: overrides
+  logo: img/logo.svg
+  favicon: img/favicon.svg
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.tabs
+    - navigation.tracking
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Canvia al tema fosc
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Canvia al tema clar
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - js/eco-theme.js
+
+plugins:
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: ca
+          default: true
+          name: Català
+          build: true
+        - locale: es
+          name: Español
+          site_name: EcoRide · Documentación
+          build: true
+          nav:
+            - Inicio: index.md
+            - Instalación: instalacio.md
+            - Funcionalidades: funcionalitats.md
+            - Arquitectura: arquitectura.md
+            - API: api.md
+            - Proyecto:
+                - Manual de usuario: manual-usuari.md
+                - Preguntas frecuentes: faq.md
+                - Seguridad: seguretat.md
+                - Despliegue: desplegament.md
+                - Pruebas: proves.md
+                - Equipo: equip.md
+                - Glosario: glossari.md
+          theme:
+            palette:
+              - media: "(prefers-color-scheme: light)"
+                scheme: default
+                primary: custom
+                accent: custom
+                toggle:
+                  icon: material/weather-night
+                  name: Cambiar al tema oscuro
+              - media: "(prefers-color-scheme: dark)"
+                scheme: slate
+                primary: custom
+                accent: custom
+                toggle:
+                  icon: material/weather-sunny
+                  name: Cambiar al tema claro
+        - locale: en
+          name: English
+          site_name: EcoRide · Documentation
+          build: true
+          nav:
+            - Home: index.md
+            - Installation: instalacio.md
+            - Features: funcionalitats.md
+            - Architecture: arquitectura.md
+            - API: api.md
+            - Project:
+                - User manual: manual-usuari.md
+                - FAQ: faq.md
+                - Security: seguretat.md
+                - Deployment: desplegament.md
+                - Tests: proves.md
+                - Team: equip.md
+                - Glossary: glossari.md
+          theme:
+            palette:
+              - media: "(prefers-color-scheme: light)"
+                scheme: default
+                primary: custom
+                accent: custom
+                toggle:
+                  icon: material/weather-night
+                  name: Switch to dark mode
+              - media: "(prefers-color-scheme: dark)"
+                scheme: slate
+                primary: custom
+                accent: custom
+                toggle:
+                  icon: material/weather-sunny
+                  name: Switch to light mode
+  - search
+  - glightbox
+  - minify:
+      minify_html: true
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+nav:
+  - Inici: index.md
+  - Instal·lació: instalacio.md
+  - Funcionalitats: funcionalitats.md
+  - Arquitectura: arquitectura.md
+  - API: api.md
+  - Projecte:
+      - Manual d'usuari: manual-usuari.md
+      - Preguntes freqüents: faq.md
+      - Seguretat: seguretat.md
+      - Desplegament: desplegament.md
+      - Proves: proves.md
+      - Equip: equip.md
+      - Glossari: glossari.md

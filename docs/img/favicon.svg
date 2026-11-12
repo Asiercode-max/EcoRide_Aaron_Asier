@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="EcoRide">
+  <rect width="64" height="64" rx="15" fill="#0e5734"/>
+  <g fill="none" stroke="#9ccc65" stroke-width="4">
+    <circle cx="19" cy="43" r="8"/>
+    <circle cx="45" cy="43" r="8"/>
+  </g>
+  <path d="M19 43h11V27h13l2 16M30 43h15" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M17.5 19c0-4 3-7.2 7.2-7.2 0 4-3.2 7.2-7.2 7.2z" fill="#9ccc65"/>
+</svg>

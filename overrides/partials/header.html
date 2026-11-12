@@ -1,0 +1,82 @@
+{#-
+  Capçalera pròpia d'EcoRide.
+  Mateix contingut que la de Material, però amb les pestanyes dins de la
+  capçalera i el botó de paleta ja renderitzats des del servidor: així la
+  disposició és correcta des del primer fotograma, sense salts.
+-#}
+{% set class = "md-header md-header--inline" %}
+{% if "navigation.tabs.sticky" in features %}
+  {% set class = class ~ " md-header--shadow md-header--lifted" %}
+{% elif "navigation.tabs" not in features %}
+  {% set class = class ~ " md-header--shadow" %}
+{% endif %}
+<header class="{{ class }}" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="{{ lang.t('header') }}">
+    <a href="{{ config.extra.homepage | d(nav.homepage.url, true) | url }}" title="{{ config.site_name | e }}" class="md-header__button md-logo" aria-label="{{ config.site_name }}" data-md-component="logo">
+      {% include "partials/logo.html" %}
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      {% set icon = config.theme.icon.menu or "material/menu" %}
+      {% include ".icons/" ~ icon ~ ".svg" %}
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            {{ config.site_name }}
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            {% if page.meta and page.meta.title %}
+              {{ page.meta.title }}
+            {% else %}
+              {{ page.title }}
+            {% endif %}
+          </span>
+        </div>
+      </div>
+    </div>
+    {% if "navigation.tabs" in features and "navigation.tabs.sticky" not in features %}
+      {% include "partials/tabs.html" %}
+    {% endif %}
+    {% if config.theme.palette %}
+      {% if not config.theme.palette is mapping %}
+        {% include "partials/palette.html" %}
+      {% endif %}
+    {% endif %}
+    {% if not config.theme.palette is mapping %}
+      {% include "partials/javascripts/palette.html" %}
+    {% endif %}
+    {% if config.extra.alternate %}
+      {% include "partials/alternate.html" %}
+    {% endif %}
+    <div class="eco-palette">
+      <button type="button" class="md-header__button md-icon eco-palette__toggle" aria-haspopup="true" aria-expanded="false" aria-label="Tema de color" title="Tema de color">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2a10 10 0 0 0 0 20c1.11 0 2-.89 2-2 0-.5-.19-1-.5-1.39-.31-.4-.5-.89-.5-1.36 0-1.1.9-2 2-2h2.31A5.69 5.69 0 0 0 22 9.56C21.73 5.26 17.35 2 12 2M6.5 11A1.5 1.5 0 1 1 8 9.5 1.5 1.5 0 0 1 6.5 11m3-4A1.5 1.5 0 1 1 11 5.5 1.5 1.5 0 0 1 9.5 7m5 0A1.5 1.5 0 1 1 16 5.5 1.5 1.5 0 0 1 14.5 7m3 4A1.5 1.5 0 1 1 19 9.5 1.5 1.5 0 0 1 17.5 11Z"/>
+        </svg>
+      </button>
+    </div>
+    {% if "material/search" in config.plugins %}
+      {% set search = config.plugins["material/search"] | attr("config") %}
+      {% if search.enabled %}
+        <label class="md-header__button md-icon" for="__search">
+          {% set icon = config.theme.icon.search or "material/magnify" %}
+          {% include ".icons/" ~ icon ~ ".svg" %}
+        </label>
+        {% include "partials/search.html" %}
+      {% endif %}
+    {% endif %}
+    {% if config.repo_url %}
+      <div class="md-header__source">
+        {% include "partials/source.html" %}
+      </div>
+    {% endif %}
+  </nav>
+  {% if "navigation.tabs.sticky" in features %}
+    {% if "navigation.tabs" in features %}
+      {% include "partials/tabs.html" %}
+    {% endif %}
+  {% endif %}
+</header>

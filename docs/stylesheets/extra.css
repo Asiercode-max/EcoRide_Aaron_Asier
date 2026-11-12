@@ -1,0 +1,659 @@
+/* ==========================================================================
+   EcoRide · estils propis
+   ========================================================================== */
+
+:root {
+  /* Tema per defecte: Bosc */
+  --eco-accent: #9ccc65;
+  --eco-on-accent: #0b3d2e;
+  --eco-hero-base: #0b3d2e;
+  --eco-hero-1: rgba(8, 43, 32, 0.94);
+  --eco-hero-2: rgba(11, 61, 46, 0.72);
+  --eco-hero-3: rgba(8, 43, 32, 0.9);
+  --eco-404-from: #0b3d2e;
+  --eco-404-to: #1b7f4f;
+  --eco-tint: rgba(27, 127, 79, 0.05);
+  --eco-shadow: rgba(11, 61, 46, 0.14);
+}
+
+/* ---- Temes de color (selector de la capçalera) ------------------------- */
+
+[data-eco-theme="electric"] {
+  --eco-accent: #67e8f9;
+  --eco-on-accent: #062b3a;
+  --eco-404-from: #062a4a;
+  --eco-404-to: #0b6fa4;
+  --eco-tint: rgba(11, 79, 138, 0.06);
+  --eco-shadow: rgba(6, 42, 74, 0.18);
+}
+
+[data-eco-theme="sunset"] {
+  --eco-accent: #fbbf24;
+  --eco-on-accent: #3d1c05;
+  --eco-404-from: #4a1d10;
+  --eco-404-to: #b45309;
+  --eco-tint: rgba(180, 83, 9, 0.06);
+  --eco-shadow: rgba(74, 29, 16, 0.18);
+}
+
+/* ---- Paleta pròpia (primary: custom / accent: custom) ------------------ */
+
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #0e5734;
+  --md-primary-fg-color--light: #1b7f4f;
+  --md-primary-fg-color--dark: #0b3d2e;
+  --md-primary-bg-color: #ffffff;
+  --md-primary-bg-color--light: rgba(255, 255, 255, 0.7);
+  --md-accent-fg-color: #2e8b57;
+  --md-typeset-a-color: #0e5734;
+}
+
+[data-md-color-scheme="slate"] {
+  /* Superfícies un poc més clares que el fons: si no, el verd fosc
+     es confonia amb el negre de la pàgina. */
+  --md-primary-fg-color: #14603f;
+  --md-primary-fg-color--light: #1b7f4f;
+  --md-primary-fg-color--dark: #0f4530;
+  --md-primary-bg-color: #ffffff;
+  --md-primary-bg-color--light: rgba(255, 255, 255, 0.7);
+  --md-accent-fg-color: #9ccc65;
+
+  /* Mode fosc més profund, amb fons verd fosc en lloc de gris */
+  --md-default-bg-color: #08120e;
+  --md-default-bg-color--light: #0d1d16;
+  --md-default-bg-color--lighter: #12271d;
+  --md-default-bg-color--lightest: #173224;
+  --md-default-fg-color: rgba(236, 245, 240, 0.92);
+  --md-default-fg-color--light: rgba(236, 245, 240, 0.72);
+  --md-default-fg-color--lighter: rgba(236, 245, 240, 0.38);
+  --md-default-fg-color--lightest: rgba(236, 245, 240, 0.12);
+  --md-code-bg-color: #11261c;
+  --md-code-fg-color: #d9ebe1;
+  --md-footer-bg-color: #0c2418;
+  --md-footer-bg-color--dark: #071a11;
+  --md-typeset-a-color: #9ccc65;
+}
+
+/* ---- Mode fosc: separació de superfícies ------------------------------ */
+
+[data-md-color-scheme="slate"] .md-header {
+  box-shadow: 0 1px 0 rgba(156, 204, 101, 0.18);
+}
+
+[data-md-color-scheme="slate"] .md-typeset pre > code {
+  border: 1px solid rgba(156, 204, 101, 0.16);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) th {
+  background-color: #14603f;
+  color: #ffffff;
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) tr:nth-child(2n) {
+  background-color: #0c1a14;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .admonition,
+[data-md-color-scheme="slate"] .md-typeset details {
+  background-color: #0e231a;
+}
+
+[data-md-color-scheme="slate"] .md-typeset blockquote {
+  border-left-color: rgba(156, 204, 101, 0.45);
+}
+
+[data-md-color-scheme="slate"] .md-code__nav {
+  background-color: rgba(156, 204, 101, 0.12);
+}
+
+[data-md-color-scheme="slate"] .md-code__button {
+  color: rgba(236, 245, 240, 0.75);
+}
+
+[data-md-color-scheme="slate"] .md-select__inner,
+[data-md-color-scheme="slate"] .eco-palette__menu {
+  border: 1px solid rgba(236, 245, 240, 0.14);
+}
+
+[data-md-color-scheme="default"][data-eco-theme="electric"] {
+  --md-primary-fg-color: #0b4f8a;
+  --md-primary-fg-color--light: #0e6bb5;
+  --md-primary-fg-color--dark: #073a66;
+  --md-accent-fg-color: #0e7490;
+  --md-typeset-a-color: #0b4f8a;
+  /* La pàgina sencera agafa un to blau molt suau; la foto del hero no canvia */
+  --md-default-bg-color: #f4f8fd;
+  --md-footer-bg-color: #073a66;
+  --md-footer-bg-color--dark: #052a4d;
+}
+
+[data-md-color-scheme="slate"][data-eco-theme="electric"] {
+  --md-primary-fg-color: #0e4f7d;
+  --md-primary-fg-color--light: #12689e;
+  --md-primary-fg-color--dark: #0a3a5c;
+  --md-accent-fg-color: #22d3ee;
+  --md-typeset-a-color: #67e8f9;
+}
+
+[data-md-color-scheme="default"][data-eco-theme="sunset"] {
+  --md-primary-fg-color: #7c2d12;
+  --md-primary-fg-color--light: #9a3412;
+  --md-primary-fg-color--dark: #5c210d;
+  --md-accent-fg-color: #b45309;
+  --md-typeset-a-color: #7c2d12;
+  --md-default-bg-color: #fdf6f0;
+  --md-footer-bg-color: #5c210d;
+  --md-footer-bg-color--dark: #431407;
+}
+
+[data-md-color-scheme="slate"][data-eco-theme="sunset"] {
+  --md-primary-fg-color: #6f2a12;
+  --md-primary-fg-color--light: #8a3515;
+  --md-primary-fg-color--dark: #4a1a09;
+  --md-accent-fg-color: #fbbf24;
+  --md-typeset-a-color: #fbbf24;
+}
+
+::selection {
+  background: rgba(156, 204, 101, 0.45);
+  background: color-mix(in srgb, var(--eco-accent) 45%, transparent);
+}
+
+/* ---- Selector de tema: botó de paleta amb desplegable ------------------ */
+
+.eco-palette {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.eco-palette__toggle {
+  cursor: pointer;
+}
+
+.eco-palette__menu {
+  position: absolute;
+  top: calc(100% + 0.2rem);
+  right: 0;
+  z-index: 20;
+  min-width: 10.5rem;
+  padding: 0.25rem;
+  border-radius: 0.2rem;
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  box-shadow: 0 0.2rem 0.7rem rgba(0, 0, 0, 0.28);
+}
+
+.eco-palette__menu[hidden] {
+  display: none;
+}
+
+.eco-palette__label {
+  margin: 0.25rem 0.4rem 0.3rem;
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--md-default-fg-color--light);
+}
+
+.eco-palette__item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  width: 100%;
+  padding: 0.3rem 0.4rem;
+  border: 0;
+  border-radius: 0.15rem;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-size: 0.7rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.eco-palette__item:hover,
+.eco-palette__item:focus-visible {
+  background: var(--md-default-bg-color--light);
+}
+
+.eco-palette__item[aria-checked="true"] {
+  font-weight: 700;
+  background: var(--md-default-bg-color--lighter);
+}
+
+.eco-palette__dot {
+  flex: none;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+}
+
+.eco-palette__dot--bosc {
+  background: #2e8b57;
+}
+
+.eco-palette__dot--electric {
+  background: #1d4ed8;
+}
+
+.eco-palette__dot--sunset {
+  background: #ea580c;
+}
+
+.eco-palette__check {
+  flex: none;
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-left: auto;
+  fill: var(--md-accent-fg-color);
+  opacity: 0;
+}
+
+.eco-palette__item[aria-checked="true"] .eco-palette__check {
+  opacity: 1;
+}
+
+/* ---- Capçalera d'una sola fila en escriptori --------------------------- */
+
+@media screen and (min-width: 76.25em) {
+  .md-header--inline .md-header__inner {
+    max-width: 76rem;
+  }
+
+  .md-header--inline .md-header__button.md-logo {
+    order: 0;
+  }
+
+  .md-header--inline .md-header__title {
+    order: 1;
+    flex: 0 0 auto;
+    width: 12.5rem;
+  }
+
+  .md-header--inline .md-tabs {
+    order: 2;
+    flex: 1 1 auto;
+    width: auto;
+    background-color: transparent;
+    overflow: visible;
+  }
+
+  /* Material marca les pestanyes amb [hidden] en inicialitzar-les; com que
+     les movem dins de la capçalera, cal mantindre-les visibles i clicables. */
+  .md-header--inline .md-tabs[hidden] {
+    display: block !important;
+    pointer-events: auto !important;
+  }
+
+  .md-header--inline .md-tabs__list,
+  .md-header--inline .md-tabs__link {
+    pointer-events: auto !important;
+  }
+
+  .md-header--inline .md-tabs__link {
+    opacity: 0.7 !important;
+    transform: none !important;
+  }
+
+  .md-header--inline .md-tabs__link--active,
+  .md-header--inline .md-tabs__link:hover {
+    opacity: 1 !important;
+  }
+
+  .md-header--inline .md-tabs > .md-grid {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .md-header--inline .md-tabs__list {
+    margin: 0;
+  }
+
+  .md-header--inline .md-search {
+    order: 3;
+    /* Amplària fixa: encara que s'òbriga el buscador, no empeny la paleta,
+       el commutador clar/fosc ni el selector d'idioma fora de la pantalla. */
+    flex: 0 0 13rem;
+    width: 13rem;
+    min-width: 0;
+  }
+
+  .md-header--inline .md-search__inner,
+  .md-header--inline .md-search__form,
+  .md-header--inline .md-search__input {
+    width: 100% !important;
+    min-width: 0;
+  }
+
+  /* Material amaga paleta i idioma en obrir el buscador per a deixar-li
+     espai; com que el buscador té amplària fixa, els deixem sempre visibles. */
+  [data-md-toggle="search"]:checked ~ .md-header.md-header--inline .md-header__option {
+    max-width: 100% !important;
+    opacity: 1 !important;
+    transition: none !important;
+  }
+
+  .md-header--inline .md-tabs {
+    min-width: 0;
+  }
+
+  /* El llistat de resultats s'obri cap a l'esquerra, damunt de les pestanyes,
+     sense eixir mai de la pantalla ni tapar la paleta o l'idioma. */
+  .md-header--inline .md-search__output {
+    left: auto !important;
+    right: 0 !important;
+    width: 26rem;
+    max-width: calc(100vw - 2rem);
+  }
+
+  .md-header--inline .eco-palette {
+    order: 4;
+  }
+
+  .md-header--inline .md-header__option {
+    order: 5;
+  }
+
+  /* El desplegable d'idioma s'obri davall del botó, alineat a la dreta,
+     no desplaçat cap a l'esquerra com fa Material per defecte. */
+  .md-header--inline .md-select__inner {
+    left: auto !important;
+    right: 0 !important;
+    top: calc(100% + 0.35rem) !important;
+    transform: none !important;
+    margin-left: 0 !important;
+  }
+
+  .md-header--inline .md-header__source {
+    order: 6;
+  }
+}
+
+/* ---- Portada: hero ----------------------------------------------------- */
+
+.md-typeset .eco-hero {
+  margin: 0 0 2rem;
+  padding: 3.2rem 2rem 2.4rem;
+  border-radius: 0.9rem;
+  background-color: var(--eco-hero-base);
+  background-image:
+    linear-gradient(115deg, var(--eco-hero-1) 0%, var(--eco-hero-2) 45%, var(--eco-hero-3) 100%),
+    url("../img/hero-ecoride.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  text-align: center;
+  overflow: hidden;
+}
+
+.md-typeset .eco-hero__eyebrow {
+  margin: 0;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.md-typeset .eco-hero__title {
+  margin: 0.3rem 0 0;
+  color: #ffffff;
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.md-typeset .eco-hero__tagline {
+  margin: 0.4rem 0 1.2rem;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.md-typeset .eco-hero__actions {
+  margin: 0;
+}
+
+.md-typeset .eco-hero .md-button {
+  margin: 0.2rem 0.15rem;
+}
+
+.md-typeset .eco-hero .md-button--primary {
+  background: var(--eco-accent);
+  border-color: var(--eco-accent);
+  color: var(--eco-on-accent);
+  font-weight: 700;
+}
+
+.md-typeset .eco-hero .md-button--primary:hover {
+  background: var(--eco-accent);
+  border-color: var(--eco-accent);
+  color: var(--eco-on-accent);
+  filter: brightness(1.08);
+}
+
+.md-typeset .eco-hero .md-button:not(.md-button--primary) {
+  border-color: rgba(255, 255, 255, 0.55);
+  color: #ffffff;
+}
+
+.md-typeset .eco-hero .md-button:not(.md-button--primary):hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+/* ---- Portada: xips de tecnologia -------------------------------------- */
+
+.md-typeset .eco-hero .eco-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+  margin: 1.2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.md-typeset .eco-hero .eco-chips li {
+  margin: 0;
+  padding: 0.15rem 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 0.66rem;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* ---- Figures i imatges ------------------------------------------------ */
+
+.md-typeset .eco-figure {
+  margin: 1.6rem 0;
+}
+
+.md-typeset .eco-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.6rem;
+  box-shadow: 0 6px 18px var(--eco-shadow);
+}
+
+.md-typeset .eco-figure figcaption {
+  margin-top: 0.55rem;
+  font-size: 0.66rem;
+  line-height: 1.5;
+  color: var(--md-default-fg-color--light);
+  text-align: center;
+}
+
+.md-typeset .eco-figure--portrait {
+  max-width: 21rem;
+  margin: 1.8rem auto 2.2rem;
+}
+
+@media screen and (max-width: 44.9375em) {
+  .md-typeset .eco-figure--portrait {
+    max-width: 16rem;
+  }
+}
+
+/* ---- Targetes de funcionalitats --------------------------------------- */
+
+.md-typeset .eco-cards > ul > li {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.md-typeset .eco-cards > ul > li:hover {
+  transform: translateY(-3px);
+  border-color: var(--eco-accent);
+  box-shadow: 0 10px 24px var(--eco-shadow);
+}
+
+.md-typeset .eco-cards .lg {
+  color: var(--md-primary-fg-color);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .eco-cards .lg {
+  color: var(--eco-accent);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .eco-cards > ul > li:hover {
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* ---- Etiquetes d'estat ------------------------------------------------ */
+
+.md-typeset .badge {
+  display: inline-block;
+  padding: 0.1rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.md-typeset .badge--prevista {
+  background: #fff3cd;
+  color: #8a6100;
+}
+
+.md-typeset .badge--dev {
+  background: #d7ecff;
+  color: #0b4f8a;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .badge--prevista {
+  background: rgba(255, 193, 7, 0.18);
+  color: #ffd166;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .badge--dev {
+  background: rgba(33, 150, 243, 0.18);
+  color: #7cc4ff;
+}
+
+/* ---- Taules ----------------------------------------------------------- */
+
+.md-typeset table:not([class]) th {
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+}
+
+.md-typeset table:not([class]) tbody tr:nth-child(even) {
+  background: var(--eco-tint);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) {
+  border-color: rgba(236, 245, 240, 0.14);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) td {
+  border-top-color: rgba(236, 245, 240, 0.08);
+}
+
+[data-md-color-scheme="slate"] .md-typeset pre > code {
+  border: 1px solid rgba(236, 245, 240, 0.08);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .eco-figure img {
+  background: #0d1f18;
+  border-color: rgba(236, 245, 240, 0.14);
+}
+
+/* ---- Admonicions amb el colors de marca ------------------------------- */
+
+.md-typeset .admonition.tip,
+.md-typeset details.tip {
+  border-color: var(--md-accent-fg-color);
+}
+
+.md-typeset .admonition.tip > .admonition-title,
+.md-typeset details.tip > summary {
+  background-color: var(--eco-tint);
+}
+
+/* ---- Fons del hero en pantalles petites ------------------------------ */
+
+@media screen and (max-width: 44.9375em) {
+  .md-typeset .eco-hero {
+    padding: 2.4rem 1.2rem 2rem;
+    background-position: 32% center;
+  }
+}
+
+/* ---- Pàgina 404 ------------------------------------------------------- */
+
+.md-typeset .eco-404 {
+  padding: 2rem;
+  border-radius: 0.9rem;
+  background: linear-gradient(135deg, var(--eco-404-from), var(--eco-404-to));
+  color: #ffffff;
+  text-align: center;
+}
+
+.md-typeset .eco-404 p {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.md-typeset .eco-404__code {
+  margin: 0;
+  font-family: var(--md-code-font-family);
+  font-size: 3.4rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--eco-accent);
+}
+
+.md-typeset .eco-404__text {
+  margin: 0.6rem 0 1.2rem;
+  font-size: 0.8rem;
+}
+
+.md-typeset .eco-404 .md-button {
+  margin: 0.2rem 0.15rem;
+}
+
+.md-typeset .eco-404 .md-button:not(.md-button--primary) {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.md-typeset .eco-404 .md-button:not(.md-button--primary):hover,
+.md-typeset .eco-404 .md-button:not(.md-button--primary):focus {
+  background-color: rgba(255, 255, 255, 0.14);
+  border-color: #ffffff;
+  color: #ffffff;
+}

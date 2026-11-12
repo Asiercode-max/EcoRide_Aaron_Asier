@@ -1,0 +1,15 @@
+{% extends "main.html" %}
+
+{% block content %}
+  <div class="eco-404">
+    <p class="eco-404__code">404</p>
+    <p class="eco-404__text">
+      Aquesta pàgina no existix · Esta página no existe · This page does not exist
+    </p>
+    <p class="eco-404__actions">
+      <a class="md-button md-button--primary" href="{{ nav.homepage.url | url }}">Inici</a>
+      <a class="md-button" href="{{ 'es/' | url }}">Inicio</a>
+      <a class="md-button" href="{{ 'en/' | url }}">Home</a>
+    </p>
+  </div>
+{% endblock %}

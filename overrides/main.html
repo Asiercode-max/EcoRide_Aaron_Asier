@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {# Marca el document com a "js" abans del primer pintat: si no, Material
+     amaga el buscador fins que carrega el bundle i la capçalera apareix
+     incompleta durant un instant. #}
+  <script>
+    document.documentElement.classList.remove("no-js");
+    document.documentElement.classList.add("js");
+  </script>
+{% endblock %}
+
+{# Les pestanyes es renderitzen dins de la capçalera (partials/header.html),
+   així que no cal tornar-les a pintar davall. #}
+{% block tabs %}{% endblock %}

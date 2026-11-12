@@ -1,0 +1,4 @@
+mkdocs-material>=9.5,<10
+mkdocs-static-i18n>=1.2
+mkdocs-minify-plugin>=0.8
+mkdocs-glightbox>=0.4
