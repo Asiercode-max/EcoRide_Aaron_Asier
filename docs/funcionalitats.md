@@ -3,7 +3,7 @@
 EcoRide agrupa les seues funcionalitats en quatre blocs principals. Per a cadascun s'indica què permet fer a l'usuari i a qui va dirigit.
 
 <figure class="eco-figure eco-figure--portrait" markdown>
-![Mockup de l'aplicació EcoRide amb el mapa d'estacions i l'estat de les bicicletes](img/funcionalitats-app.webp)
+![Mockup de l'aplicació EcoRide amb el mapa d'estacions i l'estat de les bicicletes](img/funcionalitats-app.webp){ loading=lazy decoding=async width=1122 height=1402 }
 <figcaption>La app mostra al mapa les estacions properes, les bicicletes lliures i el seu estat.</figcaption>
 </figure>
 

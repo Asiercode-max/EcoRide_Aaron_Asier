@@ -20,7 +20,7 @@ L'objectiu principal d'EcoRide és facilitar la mobilitat urbana sostenible: que
 4. **Menys trànsit i més espai públic**: més bicicletes compartides significa menys cotxes, menys embossos i més espai per a les persones.
 
 <figure class="eco-figure" markdown>
-![Il·lustració d'una persona pedalant per la ciutat, amb fulles i una reducció d'emissions al fons](img/sostenibilitat.webp)
+![Il·lustració d'una persona pedalant per la ciutat, amb fulles i una reducció d'emissions al fons](img/sostenibilitat.webp){ loading=lazy decoding=async width=1672 height=941 }
 <figcaption>Cada trajecte compartit reduix el trànsit, el soroll i les emissions de CO₂ de la ciutat.</figcaption>
 </figure>
 

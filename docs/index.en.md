@@ -20,7 +20,7 @@ EcoRide's main goal is to make sustainable urban mobility easy: anyone should be
 4. **Less traffic and more public space**: more shared bikes means fewer cars, fewer jams and more room for people.
 
 <figure class="eco-figure" markdown>
-![Illustration of a person cycling through the city, with leaves and lower emissions in the background](img/sostenibilitat.webp)
+![Illustration of a person cycling through the city, with leaves and lower emissions in the background](img/sostenibilitat.webp){ loading=lazy decoding=async width=1672 height=941 }
 <figcaption>Every shared trip reduces traffic, noise and the city's CO₂ emissions.</figcaption>
 </figure>
 

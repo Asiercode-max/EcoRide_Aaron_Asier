@@ -3,7 +3,7 @@
 EcoRide groups its features into four main blocks. For each one, the page explains what the user can do and who it is aimed at.
 
 <figure class="eco-figure eco-figure--portrait" markdown>
-![EcoRide app mockup with the station map and bike status](img/funcionalitats-app.webp)
+![EcoRide app mockup with the station map and bike status](img/funcionalitats-app.webp){ loading=lazy decoding=async width=1122 height=1402 }
 <figcaption>The app shows nearby stations, free bikes and their status on the map.</figcaption>
 </figure>
 

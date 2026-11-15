@@ -1,6 +1,26 @@
 {% extends "base.html" %}
 
 {% block extrahead %}
+  {# Preconnect i dns-prefetch per a fonts i unpkg: connecta a la xarxa per endavant #}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+
+  {# Optimització de Mermaid: preload immediat si la pàgina té diagrames, prefetch en segon pla a la resta #}
+  {% if page and page.file and ("arquitectura" in page.file.src_path or "api" in page.file.src_path) %}
+    <link rel="preload" href="https://unpkg.com/mermaid@11/dist/mermaid.min.js" as="script" crossorigin>
+  {% else %}
+    <link rel="prefetch" href="https://unpkg.com/mermaid@11/dist/mermaid.min.js" as="script" crossorigin>
+  {% endif %}
+
+  {# Precarrega de la imatge de portada (hero) per a que aparega instantàniament #}
+  {% if page and page.file and "index" in page.file.src_path %}
+    <link rel="preload" href="{{ 'img/hero-ecoride.webp' | url }}" as="image" type="image/webp">
+  {% endif %}
+
   {# Marca el document com a "js" abans del primer pintat: si no, Material
      amaga el buscador fins que carrega el bundle i la capçalera apareix
      incompleta durant un instant. #}
